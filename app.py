@@ -2,7 +2,8 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import re
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", static_url_path="")
+
 CORS(app)
 
 # 🔴 Final rule-based phishing detection logic
@@ -47,7 +48,7 @@ def predict_phishing(url):
 
 @app.route("/")
 def index():
-    return "App is running successfully 🚀"
+    return send_from_directory("static", "index.html")
 
 
 @app.route("/predict", methods=["POST"])

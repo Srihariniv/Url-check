@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Phishbuster | Dashboard</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/mainlogo.jpeg" rel="icon">
+  <link href="assets/img/mainlogo.jpeg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Krub:300,400,600,700|Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Dashboard UI Enhancements -->
+  <style>
+    /* ===== HERO TEXT ===== */
+    .dashboard-title {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .dashboard-subtitle {
+      font-size: 18px;
+      color: #6c757d;
+      margin-top: 10px;
+    }
+
+    /* ===== MAIN CARD ===== */
+    .dashboard-box {
+      background: #fff;
+      padding: 45px;
+      border-radius: 14px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 4px solid #1977cc;
+    }
+
+    .dashboard-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+    }
+
+    #url {
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    .action-buttons .btn {
+      padding: 10px 26px;
+      border-radius: 50px;
+      font-weight: 600;
+      margin: 5px;
+    }
+
+    #result {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    /* ===== FEATURES ===== */
+    .feature-box {
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-box i {
+      background: rgba(25, 119, 204, 0.1);
+      padding: 18px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .feature-box h4 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+   
+  </style>
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top" data-aos="fade-down">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo mr-auto"><a href="index.html">phishB</a></h1>
+
+    <nav class="nav-menu d-none d-lg-block">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="usecases.html">About</a></li>
+        <li><a href="usecases.html">Usecases</a></li>
+        
+      </ul>
+    </nav>
+
+    <a href="https://phishingquiz.withgoogle.com/" class="get-started-btn scrollto">Phishing Check</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ======= Dashboard Section ======= -->
+<section class="faq" style="margin-top:130px" data-aos="fade-up">
+  <div class="container text-center">
+
+    <!-- HERO -->
+    <h1 class="dashboard-title " data-aos="zoom-in">
+      Smart Phishing Threat Detection
+    </h1>
+    <p class="dashboard-subtitle" data-aos="fade-up" data-aos-delay="200">
+      Analyze website URLs in real-time using intelligent detection techniques
+    </p>
+
+    <!-- INPUT CARD -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-8">
+        <div class="dashboard-box bg-light" data-aos="fade-up" data-aos-delay="300">
+
+          <input
+            type="text"
+            id="url"
+            class="form-control"
+            placeholder="Paste a website URL here to check if it is safe or phishing"
+          />
+
+          <div class="action-buttons mt-4">
+            <button class="btn btn-primary" onclick="checkURL()">Scan Website</button>
+            <button class="btn btn-secondary" onclick="resetPage()">Clear</button>
+          </div>
+
+          <p id="result"></p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="row mt-5 text-center">
+      <div class="col-md-4 mb-4" data-aos="fade-right">
+        <div class="feature-box">
+          <i class='bx bxs-shield bx-lg' style="color:#1977cc;"></i>
+          <h4>Safe Browsing</h4>
+          <p>Detect malicious websites before you visit them.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="fade-up">
+        <div class="feature-box">
+          <i class='bx bxs-brain bx-lg' style="color:#1977cc;"></i>
+          <h4>Intelligent Analysis</h4>
+          <p>Rule-based and pattern-based URL inspection.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="fade-left">
+        <div class="feature-box">
+          <i class='bx bxs-user-check bx-lg' style="color:#1977cc;"></i>
+          <h4>User Friendly</h4>
+          <p>Simple, clean, and interactive dashboard design.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ======= Footer ======= -->
+<footer id="footer" data-aos="fade-up">
+  <div class="container text-center py-4">
+    <p>Final Year Project © 2021. All Rights Reserved</p>
+  </div>
+</footer>
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<!-- Vendor JS -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+
+<script>
+  AOS.init({ duration: 800, once: true });
+
+  function resetPage() {
+    document.getElementById("url").value = "";
+    document.getElementById("result").innerText = "";
+  }
+</script>
+
+<script src="main.js"></script>
+
+</body>
+</html>
